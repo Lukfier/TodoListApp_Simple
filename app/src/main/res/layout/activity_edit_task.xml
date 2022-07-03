@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".EditTaskActivity">
+
+    <EditText
+        android:id="@+id/edit_EditTextTaskTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="Task name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/edit_relativeLayoutDate"
+        app:layout_constraintTop_toBottomOf="@id/edit_EditTextTaskTitle"
+        app:layout_constraintLeft_toLeftOf="@id/edit_EditTextTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/edit_TextViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/edit_BTNDatePicker"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Date" />
+
+        <Button
+            android:id="@+id/edit_BTNDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Choose date" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/edit_relativeLayoutTime"
+        app:layout_constraintTop_toBottomOf="@id/edit_relativeLayoutDate"
+        app:layout_constraintLeft_toLeftOf="@id/edit_relativeLayoutDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/edit_TextViewTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/edit_BTNTimePicker"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Time" />
+
+        <Button
+            android:id="@+id/edit_BTNTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="Choose time" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/edit_linearLayoutStatus"
+        app:layout_constraintTop_toBottomOf="@+id/edit_relativeLayoutTime"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/edit_TextViewStatus"
+            android:text="Status"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"/>
+
+        <CheckBox
+            android:id="@+id/edit_CheckBoxStatus"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edit_linearLayoutBNT"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/edit_linearLayoutStatus"
+        app:layout_constraintLeft_toLeftOf="@+id/edit_linearLayoutStatus"
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/edit_BTNEdit"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:text="Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/edit_BTNDelete"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

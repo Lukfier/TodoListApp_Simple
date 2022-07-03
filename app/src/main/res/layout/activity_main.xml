@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/main_EditTextTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/main_relativeLayoutDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/main_EditTextTaskTitle"
+        app:layout_constraintTop_toBottomOf="@id/main_EditTextTaskTitle">
+
+        <TextView
+            android:id="@+id/main_TextViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/main_BTNDatePicker"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/main_BTNDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Choose date" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_relativeLayoutTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/main_relativeLayoutDate"
+        app:layout_constraintTop_toBottomOf="@id/main_relativeLayoutDate">
+
+        <TextView
+            android:id="@+id/main_TextViewTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/main_BTNTimePicker"
+            android:text="Time"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/main_BTNTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Choose time" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/main_BTNAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="ADD"
+        app:layout_constraintLeft_toLeftOf="@+id/main_relativeLayoutTime"
+        app:layout_constraintRight_toRightOf="@+id/main_relativeLayoutTime"
+        app:layout_constraintTop_toBottomOf="@+id/main_relativeLayoutTime" />
+
+    <TextView
+        android:background="@color/purple_200"
+        app:layout_constraintTop_toBottomOf="@+id/main_BTNAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyclerViewTaskList"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/main_BTNAddTask"
+        app:layout_constraintTop_toBottomOf="@+id/main_BTNAddTask">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
